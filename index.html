@@ -3,145 +3,828 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bishal Rajbanshi</title>
-     <link rel="icon" type="image" href="./Assets/images/letter-b.png">
-    <link rel="stylesheet" href="./Assets/style.css" />
+    <meta
+      name="description"
+      content="Bishal Rajbanshi - Node.js Backend Developer Passionate about building scalable APIs, integrating databases, and writing clean, efficient backend logic."
+    />
+    <meta
+      name="keywords"
+      content="Bishal Rajbanshi, Node.js Developer, Backend Developer, NestJS, Express.js, Prisma ORM, PostgreSQL, MongoDB, API Integration, Microservices, Docker, Backend Engineer, Software Developer"
+    />
+
+    <meta name="author" content="Bishal Rajbanshi" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bishal Rajbanshi - Software Developer" />
+    <meta
+      property="og:description"
+      content="Node.js Backend Developer experience in building scalable APIs, working with databases, and creating clean, efficient server-side applications."
+    />
+
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="en_US" />
+
+    <title>Bishal Rajbanshi - Software Developer</title>
+
+    <link rel="icon" href="/Assets/images/bishal.png" type="image/png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Global Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #fff;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* Background Effects */
+      .bg-element {
+        position: fixed;
+        border-radius: 50%;
+        z-index: -2;
+        animation: pulse 6s ease-in-out infinite;
+      }
+
+      .bg-element-1 {
+        top: -10rem;
+        right: -10rem;
+        width: 20rem;
+        height: 20rem;
+        background: radial-gradient(
+          circle,
+          rgba(251, 191, 36, 0.08) 0%,
+          transparent 70%
+        );
+      }
+
+      .bg-element-2 {
+        bottom: -10rem;
+        left: -10rem;
+        width: 20rem;
+        height: 20rem;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 70%
+        );
+        animation-delay: 2s;
+      }
+
+      .bg-element-3 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 24rem;
+        height: 24rem;
+        background: radial-gradient(
+          circle,
+          rgba(251, 191, 36, 0.04) 0%,
+          transparent 70%
+        );
+        animation-delay: 4s;
+      }
+
+      .grid-overlay {
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+        z-index: -1;
+      }
+
+      /* Layout */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 4rem;
+        align-items: center;
+        min-height: 80vh;
+      }
+
+      /* Content Components */
+      .content-section {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .status-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.15);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #10b981;
+        animation: fadeInUp 0.6s ease-out 0.2s both;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .status-indicator:hover {
+        background: rgba(16, 185, 129, 0.12);
+        border-color: rgba(16, 185, 129, 0.25);
+        transform: translateY(-1px);
+      }
+
+      .status-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        background: #10b981;
+        border-radius: 50%;
+        animation: statusPulse 2s ease-in-out infinite;
+      }
+
+      /* Typography */
+      .main-title {
+        font-size: clamp(2rem, 6vw, 2.75rem);
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 4s ease-in-out infinite,
+          fadeInUp 0.8s ease-out 0.3s both;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        font-size: 1.125rem;
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.6s ease-out 0.4s both;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        user-select: text;
+      }
+
+      .subtitle:hover:not(.clicked) {
+        color: #fbbf24;
+      }
+
+      .subtitle.clicked {
+        color: #fbbf24;
+        transform: scale(1.02);
+      }
+
+      .section-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+      }
+
+      .skills-section {
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.6s ease-out 0.5s both;
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-badge {
+        background: rgba(51, 65, 85, 0.4);
+        border: 1px solid rgba(71, 85, 105, 0.4);
+        color: #cbd5e1;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .skill-badge:hover {
+        background: rgba(71, 85, 105, 0.6);
+        transform: translateY(-2px);
+        border-color: rgba(251, 191, 36, 0.4);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .connect-section {
+        animation: fadeInUp 0.6s ease-out 0.6s both;
+      }
+
+      .connect-card {
+        background: rgba(51, 65, 85, 0.25);
+        border: 1px solid rgba(71, 85, 105, 0.4);
+        border-radius: 1rem;
+        backdrop-filter: blur(20px);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .connect-card:hover {
+        background: rgba(51, 65, 85, 0.3);
+        border-color: rgba(71, 85, 105, 0.5);
+      }
+
+      .connect-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .connect-item {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(71, 85, 105, 0.25);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .connect-item:hover {
+        background: rgba(251, 191, 36, 0.04);
+        transform: translateX(4px);
+      }
+
+      .connect-item:nth-child(odd) {
+        border-right: 1px solid rgba(71, 85, 105, 0.25);
+      }
+
+      .connect-item:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+
+      .connect-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex: 1;
+      }
+
+      .connect-icon {
+        width: 2rem;
+        height: 2rem;
+        background: rgba(71, 85, 105, 0.4);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .connect-item:hover .connect-icon {
+        background: rgba(251, 191, 36, 0.15);
+      }
+
+      .connect-details h4 {
+        font-weight: 500;
+        color: #e2e8f0;
+        font-size: 0.9rem;
+        margin-bottom: 0.125rem;
+      }
+
+      .connect-details p {
+        font-size: 0.8rem;
+        color: #94a3b8;
+      }
+
+      .connect-link {
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 500;
+        opacity: 0;
+        transition: all 0.3s ease;
+        font-size: 0.8rem;
+      }
+
+      .connect-item:hover .connect-link {
+        opacity: 1;
+      }
+
+      .inactive-badge {
+        background: rgba(239, 68, 68, 0.1);
+        color: #fca5a5;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+        margin-left: 0.5rem;
+      }
+
+      /* Right Column - Image & CV */
+      .floating-gif {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeInUp 0.8s ease-out 0.7s both;
+      }
+
+      .gif-container {
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-bottom: 1.5rem;
+      }
+
+      .gif-container::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(
+          45deg,
+          rgba(251, 191, 36, 0.1),
+          rgba(59, 130, 246, 0.1),
+          rgba(251, 191, 36, 0.1)
+        );
+        border-radius: 1rem;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .gif-container:hover::before {
+        opacity: 1;
+      }
+
+      .gif-container:hover {
+        transform: translateY(-8px) scale(1.02) rotate(1deg);
+      }
+
+      .gif-container img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 1rem;
+        display: block;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .gif-container:hover img {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      /* CV Button */
+      .cv-button-container {
+        animation: fadeInUp 0.6s ease-out 0.9s both;
+      }
+
+      .cv-button {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(71, 85, 105, 0.3);
+        color: #cbd5e1;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cv-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(251, 191, 36, 0.05),
+          rgba(59, 130, 246, 0.05),
+          rgba(251, 191, 36, 0.05)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .cv-button:hover::before {
+        opacity: 1;
+      }
+
+      .cv-button:hover {
+        background: rgba(51, 65, 85, 0.9);
+        border-color: rgba(251, 191, 36, 0.4);
+        transform: translateY(-2px);
+        color: #fbbf24;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .cv-icon {
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .cv-button:hover .cv-icon {
+        transform: scale(1.1);
+      }
+
+      .cv-text {
+        font-weight: 500;
+        letter-spacing: 0.025em;
+      }
+
+      .status-link {
+        position: fixed;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        animation: fadeInUp 0.6s ease-out 1.2s both;
+      }
+
+      .status-button {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(71, 85, 105, 0.25);
+        color: #94a3b8;
+        padding: 0.5rem 1rem;
+        border-radius: 1.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.8rem;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .status-button:hover {
+        background: rgba(51, 65, 85, 0.9);
+        border-color: rgba(251, 191, 36, 0.3);
+        transform: translateY(-2px);
+        color: #e2e8f0;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .status-button::before {
+        content: "";
+        width: 0.375rem;
+        height: 0.375rem;
+        background: #10b981;
+        border-radius: 50%;
+        animation: statusPulse 2s ease-in-out infinite;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes statusPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Utility Styles */
+      ::selection {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fff;
+      }
+
+      a:focus,
+      button:focus {
+        outline: 2px solid #fbbf24;
+        outline-offset: 2px;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        .main-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          text-align: center;
+        }
+
+        .floating-gif {
+          order: -1;
+        }
+
+        .gif-container {
+          margin-bottom: 1rem;
+        }
+
+        .gif-container img {
+          max-width: 280px;
+        }
+
+        .cv-button {
+          padding: 0.625rem 1.25rem;
+          font-size: 0.8rem;
+        }
+
+        .connect-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .connect-item {
+          text-align: left;
+          justify-content: flex-start;
+          padding: 0.875rem 1rem;
+        }
+
+        .connect-info {
+          flex: 1;
+        }
+
+        .connect-details {
+          text-align: left;
+        }
+
+        .connect-item:nth-child(odd) {
+          border-right: none;
+        }
+
+        .connect-item:not(:last-child) {
+          border-bottom: 1px solid rgba(71, 85, 105, 0.25);
+        }
+
+        .connect-item:hover {
+          transform: none;
+        }
+
+        .status-link {
+          bottom: 1rem;
+        }
+
+        .status-indicator {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .skills-grid {
+          justify-content: center;
+        }
+
+        .status-button {
+          padding: 0.5rem 0.875rem;
+          font-size: 0.75rem;
+        }
+
+        .cv-button {
+          padding: 0.5rem 1rem;
+          font-size: 0.75rem;
+        }
+      }
+    </style>
   </head>
+
   <body>
+    <div class="bg-element bg-element-1"></div>
+    <div class="bg-element bg-element-2"></div>
+    <div class="bg-element bg-element-3"></div>
+    <div class="grid-overlay"></div>
 
-   
-
-    <!-- landing page start -->
-    <section class="landingpage center" id="land">
-      <!-- navbar strt -->
-      <div class="navbar">
-        <div class="logo">
-          <h1>bishal.</h1>
-        </div>
-        <div class="socialmedia">
-          <a href="https://www.facebook.com/profile.php?id=100074060616805"> <img src="./Assets/images/facebook-app-symbol.png" alt="" /></a>
-          <a href="https://www.instagram.com/bishalrajbanchi/?hl=en"> <img src="./Assets/images/instagram (1).png" alt="" /></a>
-          <a href="https://github.com/bishalrajbanshi"> <img src="./Assets/images/github (1).png" alt="" /></a>
-        </div>
-      </div>
-
-      <!-- profile start -->
-      <div class="profile">
-        <div class="profmain">
-          <div class="pic">
-            <img src="./Assets/images/bishal.png" alt="" />
-          </div>
-          <div class="letter">
-            <h2 id="typewriter"></h2>
-          </div>
-          <div class="about">
-            <span
-              >"I am an enthusiastic and dedicated student currently pursuing a
-              Bachelor's degree in Information Technology (BIT). With a profound
-              passion for technology, I find joy in solving complex challenges
-              through programming and innovative thinking. My journey through
-              the world of technology has provided me with a strong grasp of
-              various programming languages and tools. Proficient in Java, HTML,
-              CSS, JavaScript, and SQL, I take pride in my ability to develop
-              user-friendly and visually appealing websites.</span
-            >
+    <div class="container">
+      <div class="main-content">
+        <div class="content-section">
+          <!-- Status -->
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Available for collaboration</span>
           </div>
 
-          <div class="social">
-            <div class="img1">
-                <a href="https://www.facebook.com"> <img src="./Assets/images/facebook-app-symbol.png" alt="" /></a>
-                <a href="https://www.instagram.com"> <img src="./Assets/images/instagram (1).png" alt="" /></a>
-                <a href="https://www.github.com.com"> <img src="./Assets/images/github (1).png" alt="" /></a>
+          <!-- Main Title -->
+          <h1 class="main-title">Bishal Rajbanshi</h1>
+
+          <!-- Subtitle -->
+          <p class="subtitle" id="subtitle">
+            Node.js Backend Developer with 1 year of hands-on experience.
+            Passionate about building scalable APIs, integrating databases, and
+            writing clean, efficient backend logic. Always learning, always
+            improving turning coffee into code since day one.
+          </p>
+
+          <!-- Skills -->
+          <div class="skills-section">
+            <h3 class="section-title">Expertise & Dark Arts</h3>
+            <div class="skills-grid">
+              <span class="skill-badge">Node.js Architecture</span>
+              <span class="skill-badge">NestJS</span>
+              <span class="skill-badge">Express.js</span>
+              <span class="skill-badge">Prisma ORM</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">Microservices</span>
+              <span class="skill-badge">Docker</span>
+              <span class="skill-badge">eCommerce Platforms</span>
+              <span class="skill-badge">Performance Optimization</span>
+              <span class="skill-badge">API Integration (3rd-party & AI)</span>
+            </div>
+          </div>
+
+          <!-- Connect -->
+          <div class="connect-section">
+            <h3 class="section-title">Connect & Collaborate</h3>
+            <div class="connect-card">
+              <div class="connect-grid">
+                <div class="connect-item">
+                  <div class="connect-info">
+                    <div class="connect-icon">📱</div>
+                    <div class="connect-details">
+                      <h4>Mobile</h4>
+                      <p>+977 9827930519</p>
+                    </div>
+                  </div>
+                  <a href="tel:+9779827930519" class="connect-link">Call</a>
+                </div>
+
+                <div class="connect-item">
+                  <div class="connect-info">
+                    <div class="connect-icon">✉️</div>
+                    <div class="connect-details">
+                      <h4>Email</h4>
+                      <p>bishalrajbanshi.mail@gmail.com</p>
+                    </div>
+                  </div>
+                  <a
+                    href="mailto:bishalrajbanshi.mail@gmail.com"
+                    class="connect-link"
+                    >Send</a
+                  >
+                </div>
+
+                <div class="connect-item">
+                  <div class="connect-info">
+                    <div class="connect-icon">💼</div>
+                    <div class="connect-details">
+                      <h4>LinkedIn</h4>
+                      <p>@bishal-rajbanshi</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/bishal-rajbanshi"
+                    target="_blank"
+                    class="connect-link"
+                    >Visit</a
+                  >
+                </div>
+
+                <div class="connect-item">
+                  <div class="connect-info">
+                    <div class="connect-icon">🐙</div>
+                    <div class="connect-details">
+                      <h4>GitHub</h4>
+                      <p>@bishalrajbanshi</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://github.com/bishalrajbanshi"
+                    target="_blank"
+                    class="connect-link"
+                    >Code</a
+                  >
+                </div>
+
+                <div class="connect-item">
+                  <div class="connect-info">
+                    <div class="connect-icon">🕊️</div>
+                    <div class="connect-details">
+                      <h4>X / Twitter</h4>
+                      <p>@connectbishal</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://x.com/connectbishal"
+                    target="_blank"
+                    class="connect-link"
+                    >Follow</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-
-    <section id="skills" class="skills-section">
-      <h2 class="section-title">My Skillset</h2>
-      <div class="skills-container">
-        <!-- HTML -->
-        <div class="skill-card another">
-          <i class="fab fa-html5 skill-icon">
-            <img src="./Assets/images/web.png" alt="">
-          </i>
-          <h3>web</h3>
-          <hr class="hr">
-          <p>html, css, js</p>
-        </div>
-        
-        <!-- CSS -->
-        <div class="skill-card">
-          <i class="fab fa-html5 skill-icon">
-            <img src="./Assets/images/smartphone.png" alt="">
-          </i>
-          <h3>Android</h3>
-          <hr class="hr">
-          <p>Java, Kotlin</p>
-        </div>
-        
-        <!-- Tailwind CSS -->
-        <div class="skill-card">
-          <i class="fab fa-html5 skill-icon">
-            <img src="./Assets/images/backend.png" alt="">
-          </i>
-          <h3>Backend</h3>
-          <hr class="hr">
-          <p>My-sql</p>
-        </div>
-        
-        <!-- SQL -->
-        <div class="skill-card">
-          <i class="fab fa-html5 skill-icon">
-            <img src="./Assets/images/framework.png" alt="">
-          </i>
-          <h3>Framwork</h3>
-          <hr class="hr">
-          <p>tailwind </p>
-        </div>
-      </div>
-    </section>
-    
-    
-    
-
-
-
-    
-
-
-      <div class="contact" id="cont">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="#" method="post">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="enter your name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" required placeholder="enter your gmail">
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="enter the message"></textarea>
-              </div>
-              <button type="submit">Send Message</button>
-            </form>
+        <!-- Right Column -->
+        <div class="floating-gif">
+          <div class="gif-container">
+            <img
+              id="floatingGif"
+              src=""
+              alt="Developer at work"
+              loading="eager"
+            />
           </div>
+
+          <!-- CV Button -->
+          <div class="cv-button-container">
+            <a
+              href="https://drive.google.com/file/d/1syrOhsn5IN2y2djsfNDpkEIe3vpvAj68/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cv-button"
+            >
+              <span class="cv-icon">📄</span>
+              <span class="cv-text">View CV</span>
+            </a>
+          </div>
+        </div>
       </div>
+    </div>
 
-    </section>
-
-
-    
-
-    <footer class="copyright">
-        <p>&copy; 2023 bishal rajbanshi. All rights reserved.</p>
-      </footer>
-
-    <script src="./Assets/script.js"></script>
+    <!-- Status Link -->
+    <!-- <div class="status-link">
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        class="status-button"
+      >
+        Status
+      </a>
+    </div> -->
   </body>
 </html>
